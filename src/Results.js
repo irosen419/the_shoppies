@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
 
-function Result({ searchInput, addNomination }) {
+function Result({ searchInput, addOrRemove }) {
 
     const [results, setResults] = useState([])
 
+    const [page, setPage] = useState(1)
+
     useEffect(() => {
         if (searchInput.length) {
-            fetch(`http://www.omdbapi.com/?s=${searchInput}&apikey=40281cad`)
+            fetch(`http://www.omdbapi.com/?s=${searchInput}&page=1&apikey=40281cad`)
                 .then(resp => resp.json())
                 .then(data => {
                     setResults([...data.Search])
@@ -15,8 +17,27 @@ function Result({ searchInput, addNomination }) {
         }
     }, [searchInput])
 
+    useEffect(() => {
+        if (searchInput.length) {
+            fetch(`http://www.omdbapi.com/?s=${searchInput}&page=${page}&apikey=40281cad`)
+                .then(resp => resp.json())
+                .then(data => {
+                    setResults([...data.Search])
+                })
+        }
+    }, [page])
+
     const mapResults = () => {
-        return results.map(movie => <MovieCard movie={movie} addNomination={addNomination} list="results" />)
+        return results.map(movie => <MovieCard key={results.indexOf(movie)} movie={movie} addOrRemove={addOrRemove} list="results" />)
+    }
+
+    const renderButtons = () => {
+        return (
+            <>
+                {page > 1 ? <button onClick={() => setPage(page - 1)}>Previous Page</button> : null}
+                {page > 0 && results.length === 10 ? <button onClick={() => setPage(page + 1)}>Next Page</button> : null}
+            </>
+        )
     }
 
     return (
@@ -25,6 +46,7 @@ function Result({ searchInput, addNomination }) {
             <ul>
                 {mapResults()}
             </ul>
+            {renderButtons()}
         </div>
     )
 }

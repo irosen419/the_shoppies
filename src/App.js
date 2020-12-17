@@ -14,18 +14,24 @@ function App() {
     setSearchInput(search)
   }
 
-  const addNomination = (nomination) => {
-    let newNominations = [...nominations]
-    newNominations.push(nomination)
-    setNominations(newNominations)
+  const addOrRemove = (nomination, listType) => {
+    if (listType === 'results') {
+      let newNominations = [...nominations]
+      newNominations.push(nomination)
+      setNominations(newNominations)
+    } else if (listType === 'nominations') {
+      let newNominations = [...nominations]
+      newNominations = newNominations.filter(movie => movie.Title !== nomination.Title)
+      setNominations(newNominations)
+    }
   }
 
   return (
     <div className="App">
       <Search getTitle={getTitle} />
       <div id="container" style={{ display: 'flex' }}>
-        <Results searchInput={searchInput} addNomination={addNomination} />
-        <Nominations nominations={nominations} />
+        <Results searchInput={searchInput} addOrRemove={addOrRemove} />
+        <Nominations nominations={nominations} addOrRemove={addOrRemove} />
       </div>
     </div>
   );
