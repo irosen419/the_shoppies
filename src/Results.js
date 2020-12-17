@@ -35,19 +35,19 @@ function Result({ searchInput, addOrRemove }) {
 
     const renderButtons = () => {
         return (
-            <>
+            <div id='buttons'>
                 {page > 1 ? <button onClick={() => setPage(page - 1)}>Previous Page</button> : null}
                 {page > 0 && results.length === 10 ? <button onClick={() => setPage(page + 1)}>Next Page</button> : null}
-            </>
+            </div>
         )
     }
 
     return (
         <div id='results'>
             <h2>Results for "{searchInput}"</h2>
-            <ul id='results-list'>
+            <div id='results-list'>
                 {mapResults()}
-            </ul>
+            </div>
             {renderButtons()}
         </div>
     )
