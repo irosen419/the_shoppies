@@ -1,4 +1,5 @@
-import './App.css';
+import './App.scss'
+import './CSS/container.scss';
 import React, { useState } from 'react'
 import Search from './Search'
 import Results from './Results'
@@ -27,9 +28,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='App'>
       <Search getTitle={getTitle} />
-      <div id="container" style={{ display: 'flex' }}>
+      <div id='container'>
         <Results searchInput={searchInput} addOrRemove={addOrRemove} />
         <Nominations nominations={nominations} addOrRemove={addOrRemove} />
       </div>

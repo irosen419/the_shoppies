@@ -14,7 +14,7 @@ function Nominations({ addOrRemove, nominations }) {
     }
 
     return (
-        <div style={{ border: '2px solid black', width: 'fit-content', padding: '50px' }}>
+        <div id='nominations-container'>
             <h2>Nominations</h2>
             {mapNominations()}
         </div>

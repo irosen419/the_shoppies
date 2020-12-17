@@ -14,10 +14,7 @@ function Result({ searchInput, addOrRemove }) {
                 .then(data => {
                     setResults([...data.Search])
                 })
-                .catch(err => {
-                    alert('Sorry... There are no search results for that title!')
-                    setResults([])
-                })
+                .catch(err => console.log(err))
         }
     }, [searchInput])
 
@@ -28,7 +25,7 @@ function Result({ searchInput, addOrRemove }) {
                 .then(data => {
                     setResults([...data.Search])
                 })
-                .catch(err => alert('Sorry... There are no more search results for that title!'))
+                .catch(err => console.log(err))
         }
     }, [page])
 
@@ -46,9 +43,9 @@ function Result({ searchInput, addOrRemove }) {
     }
 
     return (
-        <div style={{ border: '2px solid black', width: 'fit-content', padding: '50px' }}>
+        <div id='results'>
             <h2>Results for "{searchInput}"</h2>
-            <ul>
+            <ul id='results-list'>
                 {mapResults()}
             </ul>
             {renderButtons()}

@@ -1,6 +1,6 @@
 function MovieCard({ movie, addOrRemove, list }) {
     return (
-        <div >
+        <div className='movie-card'>
             <h3>{movie.Title} ({movie.Year})</h3>
             <img src={movie.Poster} alt={movie.Title} />
             <br></br>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 function Search({ getTitle }) {
@@ -9,21 +9,14 @@ function Search({ getTitle }) {
         setMovieTitle(e.target.value)
     }
 
-    const submitInput = (e) => {
-        e.preventDefault()
-
+    useEffect(() => {
         getTitle(movieTitle)
-
-        setMovieTitle("")
-    }
+    }, [movieTitle])
 
     return (
         <div>
             <h3>Movie title</h3>
-            <form onSubmit={submitInput}>
-                <input type="text" value={movieTitle} onChange={handleInput} />
-                <input type="submit" value="Submit" />
-            </form>
+            <input type="text" value={movieTitle} onChange={handleInput} />
         </div>
     )
 }

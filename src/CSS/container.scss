@@ -1,0 +1,36 @@
+#container {
+    display: flex;
+
+    div {
+        background-color: rgb(206, 206, 206);
+        border: 1px solid black
+    }
+
+    #results {
+        
+        #results-list {
+            display: grid;
+            grid-template-columns: 400px 400px;
+            grid-template-rows: 700px;
+            grid-gap: 30px;
+        }
+    }
+
+    #nominations-container {
+        border: '2px solid black';
+        width: 'fit-content';
+        padding: '50px'
+    }
+
+    .movie-card {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        border: 1px grey;
+        border-radius: 20px;
+        box-shadow: 5px 2.5px 7.5px 2.5px;
+        padding: 25px;
+
+        background-color: rgb(240, 240, 240);
+    }
+}
