@@ -9,21 +9,26 @@ function Result({ searchInput, addOrRemove }) {
 
     useEffect(() => {
         if (searchInput.length) {
-            fetch(`http://www.omdbapi.com/?s=${searchInput}&page=1&apikey=40281cad`)
+            fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=40281cad`)
                 .then(resp => resp.json())
                 .then(data => {
                     setResults([...data.Search])
+                })
+                .catch(err => {
+                    alert('Sorry... There are no search results for that title!')
+                    setResults([])
                 })
         }
     }, [searchInput])
 
     useEffect(() => {
         if (searchInput.length) {
-            fetch(`http://www.omdbapi.com/?s=${searchInput}&page=${page}&apikey=40281cad`)
+            fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
                 .then(resp => resp.json())
                 .then(data => {
                     setResults([...data.Search])
                 })
+                .catch(err => alert('Sorry... There are no more search results for that title!'))
         }
     }, [page])
 
