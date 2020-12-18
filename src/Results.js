@@ -45,7 +45,7 @@ function Result({ searchInput, addOrRemove, cookies }) {
 
     return (
         <div id='results'>
-            <h2>Results for "{searchInput}"</h2>
+            <h2>{searchInput ? `Results for "${searchInput}"` : 'Type a movie title in the above to search for it!'}</h2>
             <div id='results-list'>
                 {mapResults()}
             </div>

@@ -8,8 +8,9 @@ import Nominations from './Nominations'
 
 function App() {
 
-  const [searchInput, setSearchInput] = useState("")
   var cookies = new Cookies();
+
+  const [searchInput, setSearchInput] = useState("")
   const [nominations, setNominations] = useState(cookies.get('nominations'))
 
   const getTitle = (search) => {
