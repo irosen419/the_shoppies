@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
 
-function Result({ searchInput, addOrRemove }) {
+function Result({ searchInput, addOrRemove, cookies }) {
 
     const [results, setResults] = useState([])
 
@@ -30,7 +30,8 @@ function Result({ searchInput, addOrRemove }) {
     }, [page])
 
     const mapResults = () => {
-        return results.map(movie => <MovieCard key={results.indexOf(movie)} movie={movie} addOrRemove={addOrRemove} list="results" />)
+        let cookieNoms = cookies.get('nominations')
+        return results.map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="results" cookieNoms={cookieNoms} />)
     }
 
     const renderButtons = () => {

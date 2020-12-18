@@ -10,13 +10,15 @@ function Nominations({ addOrRemove, nominations }) {
     }, [nominations])
 
     const mapNominations = () => {
-        return nominations.map(movie => <MovieCard key={nominations.indexOf(movie)} movie={movie} addOrRemove={addOrRemove} list="nominations" />)
+        return nominations.map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="nominations" />)
     }
 
     return (
-        <div id='nominations-container'>
+        <div id='nominations'>
             <h2>Nominations</h2>
-            {mapNominations()}
+            <div id='nominations-list'>
+                {mapNominations()}
+            </div>
         </div>
     )
 }

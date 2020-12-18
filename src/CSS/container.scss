@@ -10,19 +10,6 @@
 
     #results {
         height: 80vh;
-        #results-list {
-            display: relative;
-            width: 100%;
-            height: 75%;
-            margin-bottom: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 500px);
-            grid-gap: 20px;
-            border: none;
-            overflow-y: hidden;
-            overflow: scroll;           
-        }
 
         #results-list::-webkit-scrollbar {
             display: none;
@@ -33,46 +20,73 @@
             scrollbar-width: none;
         }
 
-        .movie-card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            border: 1px grey;
-            border-radius: 20px;
-            box-shadow: 5px 2.5px 7.5px 2.5px;
-            padding: 0 25px;
-    
-            background-color: rgb(240, 240, 240);
-    
-            img {
-                height: 66%;
-            }
-    
-            .bottom {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                border: none;
-                border-radius: 20px;
-                background-color: rgb(240, 240, 240);
-                width: 100%;
-                margin: 0 0 10px 0;
-                text-align: center;
-            }
-        }
-
         #buttons {
             height: 10%;
             width: 100%;
+            bottom: 0;
             border: none;
-            margin-top: 0;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                width: 10%;
+                height: 40%;
+                font-size: 100%;
+                margin: 0 20px;
+            }
         }
     }
 
-    #nominations-container {
+    #nominations {
+        height: 80vh;
         border: '2px solid black';
         width: 'fit-content';
         padding: '50px'
+    }
+
+    #results-list, #nominations-list{
+        display: relative;
+        width: 100%;
+        height: 75%;
+        margin-bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 500px);
+        grid-gap: 20px;
+        border: none;
+        overflow-y: hidden;
+        overflow: scroll;           
+    }
+
+    .movie-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 1px grey;
+        border-radius: 20px;
+        box-shadow: 5px 2.5px 7.5px 2.5px;
+        padding: 0 25px;
+
+        background-color: rgb(240, 240, 240);
+
+        img {
+            height: 66%;
+        }
+
+        .bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: none;
+            border-radius: 20px;
+            background-color: rgb(240, 240, 240);
+            width: 100%;
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
     }
 
 
