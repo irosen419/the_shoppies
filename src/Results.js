@@ -11,26 +11,33 @@ function Result({ searchInput, addOrRemove }) {
     // Movie and total results are both stored in state
     useEffect(() => {
         if (searchInput.length) {
-            fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=40281cad`)
-                .then(resp => resp.json())
-                .then(data => {
-                    setTotalResults(data.totalResults)
-                    setResults([...data.Search])
-                })
-                .catch(err => console.log(err))
+            function firstFetch() {
+                fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=40281cad`)
+                    .then(resp => resp.json())
+                    .then(data => {
+                        setTotalResults(data.totalResults)
+                        setResults([...data.Search])
+                    })
+                    .catch(err => console.log(err))
+
+            }
+            firstFetch()
         }
     }, [searchInput])
 
     // Fetch for a new page of results as the value of 'page' changes
     useEffect(() => {
         if (searchInput.length) {
-            fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
-                .then(resp => resp.json())
-                .then(data => {
-                    setTotalResults(data.totalResults)
-                    setResults([...data.Search])
-                })
-                .catch(err => console.log(err))
+            function pageChangeFetch() {
+                fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
+                    .then(resp => resp.json())
+                    .then(data => {
+                        setTotalResults(data.totalResults)
+                        setResults([...data.Search])
+                    })
+                    .catch(err => console.log(err))
+            }
+            pageChangeFetch()
         }
     }, [page])
 
