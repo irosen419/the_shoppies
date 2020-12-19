@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
 
 function Result({ searchInput, addOrRemove }) {
+    const API_KEY = process.env.REACT_APP_API_KEY
 
     const [results, setResults] = useState([])
     const [totalResults, setTotalResults] = useState("")
@@ -13,7 +14,7 @@ function Result({ searchInput, addOrRemove }) {
         if (searchInput.length) {
             async function firstFetch() {
                 try {
-                    const response = await fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=40281cad`)
+                    const response = await fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=${API_KEY}`)
                     const json = await response.json()
                     setTotalResults(json.totalResults)
                     setResults([...json.Search])
