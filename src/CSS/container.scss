@@ -13,15 +13,6 @@
 
     #results {
 
-        #results-list::-webkit-scrollbar {
-            display: none;
-        }
-  
-        #results-list {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
         #buttons {
             height: 10%;
             width: 100%;
@@ -47,6 +38,8 @@
         h2 {
             margin-left: 10%;
         }
+
+        
     }
 
     #results-list, #nominations-list{

@@ -5,6 +5,8 @@ function Result({ searchInput, addOrRemove }) {
 
     const [results, setResults] = useState([])
 
+    const [totalResults, setTotalResults] = useState("")
+
     const [page, setPage] = useState(1)
 
     useEffect(() => {
@@ -12,6 +14,7 @@ function Result({ searchInput, addOrRemove }) {
             fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=40281cad`)
                 .then(resp => resp.json())
                 .then(data => {
+                    setTotalResults(data.totalResults)
                     setResults([...data.Search])
                 })
                 .catch(err => console.log(err))
@@ -23,6 +26,7 @@ function Result({ searchInput, addOrRemove }) {
             fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
                 .then(resp => resp.json())
                 .then(data => {
+                    setTotalResults(data.totalResults)
                     setResults([...data.Search])
                 })
                 .catch(err => console.log(err))
@@ -44,7 +48,7 @@ function Result({ searchInput, addOrRemove }) {
 
     return (
         <div id='results'>
-            <h2>{searchInput ? `Results for "${searchInput}"` : 'Type a movie title in the above to search for it!'}</h2>
+            <h2>{searchInput ? `${totalResults || 0} results for "${searchInput}"` : 'Type a movie title in the above to search for it!'}</h2>
             <div id='results-list'>
                 {mapResults()}
             </div>

@@ -16,9 +16,15 @@ function Nominations({ addOrRemove, nominations }) {
     return (
         <div id='nominations'>
             <h2>Nominations</h2>
-            <div id='nominations-list'>
-                {mapNominations()}
-            </div>
+            {
+                nominations.length ?
+                    <div id='nominations-list'>
+                        {mapNominations()}
+                    </div> :
+                    <h2>You haven't made any nominations yet...</h2>
+            }
+
+
         </div>
     )
 }

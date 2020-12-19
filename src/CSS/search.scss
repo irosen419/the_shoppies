@@ -1,21 +1,24 @@
 #search {
-    position: relative;
     background-color: rgb(206, 206, 206);
     border: 1px solid black;
     width: 66%;
     height: 10vh;
 
     #inner-search {
-        position: absolute;
-        bottom: 0;
+        margin: 0 auto;
         width: 85%;
         height: 100%;
-        h3 {
-            
+        h2 {
+            margin: 0;
+
         }
 
         #search-input {
             height: 50%;
+            width: 100%;
+            margin-top: 1%;
+            text-align: center;
+            font-size: 100%;
         }
     
     }

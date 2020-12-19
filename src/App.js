@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div className='App'>
+      <h1> The Shoppies</h1>
       <Search getTitle={getTitle} />
       <div id='container'>
         <Results searchInput={searchInput} addOrRemove={addOrRemove} />

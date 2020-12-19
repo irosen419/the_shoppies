@@ -17,7 +17,7 @@ function Search({ getTitle }) {
     return (
         <div id='search'>
             <div id='inner-search'>
-                <h3>Movie title</h3>
+                <h2>Movie title</h2>
                 <input id='search-input' type="text" value={movieTitle} onChange={handleInput} />
             </div>
         </div>
