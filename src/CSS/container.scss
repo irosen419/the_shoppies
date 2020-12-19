@@ -1,6 +1,8 @@
 #container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
     div {
         background-color: rgb(206, 206, 206);
         border: 1px solid black;
@@ -15,7 +17,7 @@
             display: none;
         }
   
-        #results-list{
+        #results-list {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
@@ -48,7 +50,7 @@
     }
 
     #results-list, #nominations-list{
-        display: relative;
+        position: relative;
         width: 100%;
         height: 75%;
         margin-bottom: 0;

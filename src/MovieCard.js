@@ -1,9 +1,9 @@
 function MovieCard({ movie, addOrRemove, list }) {
 
-    let buttons = document.querySelectorAll('.results')
-    var button = [...buttons].find(btn => btn.id === movie.imdbID)
 
     const disableOrEnable = () => {
+        let buttons = document.querySelectorAll('.results')
+        let button = [...buttons].find(btn => btn.id === movie.imdbID)
         if (list === 'results') {
             button.disabled = true
         } else if (list === 'nominations') {

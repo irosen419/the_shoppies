@@ -1,3 +1,4 @@
+import './CSS/search.scss'
 import React, { useState, useEffect } from 'react'
 
 
@@ -14,9 +15,11 @@ function Search({ getTitle }) {
     }, [movieTitle])
 
     return (
-        <div>
-            <h3>Movie title</h3>
-            <input type="text" value={movieTitle} onChange={handleInput} />
+        <div id='search'>
+            <div id='inner-search'>
+                <h3>Movie title</h3>
+                <input id='search-input' type="text" value={movieTitle} onChange={handleInput} />
+            </div>
         </div>
     )
 }
