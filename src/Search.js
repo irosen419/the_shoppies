@@ -10,6 +10,7 @@ function Search({ getTitle }) {
         setMovieTitle(e.target.value)
     }
 
+    // As search input ('movieInput') changes, send input up to App level
     useEffect(() => {
         getTitle(movieTitle)
     }, [movieTitle])

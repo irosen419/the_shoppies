@@ -14,6 +14,7 @@ function App() {
     setSearchInput(search)
   }
 
+  // Add movie to or remove movie from the nominations bucket depending on it's origin
   const addOrRemove = (nomination, listType) => {
     if (listType === 'results') {
       let newNominations = [...nominations]
