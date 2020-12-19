@@ -11,14 +11,16 @@ function Result({ searchInput, addOrRemove }) {
     // Movie and total results are both stored in state
     useEffect(() => {
         if (searchInput.length) {
-            function firstFetch() {
-                fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=40281cad`)
-                    .then(resp => resp.json())
-                    .then(data => {
-                        setTotalResults(data.totalResults)
-                        setResults([...data.Search])
-                    })
-                    .catch(err => console.log(err))
+            async function firstFetch() {
+                try {
+                    const response = await fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=40281cad`)
+                    const json = await response.json()
+                    setTotalResults(json.totalResults)
+                    setResults([...json.Search])
+
+                } catch (err) {
+                    console.log(err)
+                }
 
             }
             firstFetch()
@@ -28,14 +30,15 @@ function Result({ searchInput, addOrRemove }) {
     // Fetch for a new page of results as the value of 'page' changes
     useEffect(() => {
         if (searchInput.length) {
-            function pageChangeFetch() {
-                fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
-                    .then(resp => resp.json())
-                    .then(data => {
-                        setTotalResults(data.totalResults)
-                        setResults([...data.Search])
-                    })
-                    .catch(err => console.log(err))
+            async function pageChangeFetch() {
+                try {
+                    const response = await fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
+                    const json = await response.json()
+                    setTotalResults(json.totalResults)
+                    setResults([...json.Search])
+                } catch (err) {
+                    console.log(err)
+                }
             }
             pageChangeFetch()
         }
