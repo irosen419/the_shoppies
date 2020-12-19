@@ -14,7 +14,7 @@ function Result({ searchInput, addOrRemove }) {
         if (searchInput.length) {
             async function firstFetch() {
                 try {
-                    const response = await fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=${API_KEY}`)
+                    const response = await fetch(`https://www.omdbapi.com/?s=${searchInput}&type=movie&page=1&apikey=${API_KEY}`)
                     const json = await response.json()
                     setTotalResults(json.totalResults)
                     setResults([...json.Search])
@@ -33,7 +33,7 @@ function Result({ searchInput, addOrRemove }) {
         if (searchInput.length) {
             async function pageChangeFetch() {
                 try {
-                    const response = await fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
+                    const response = await fetch(`https://www.omdbapi.com/?s=${searchInput}&type=movie&page=${page}&apikey=40281cad`)
                     const json = await response.json()
                     setTotalResults(json.totalResults)
                     setResults([...json.Search])
