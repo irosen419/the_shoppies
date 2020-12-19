@@ -6,12 +6,12 @@
     div {
         background-color: rgb(206, 206, 206);
         border: 1px solid black;
+        
         width: 66%;
         margin: 50px auto;
     }
 
     #results {
-        height: 80vh;
 
         #results-list::-webkit-scrollbar {
             display: none;
@@ -42,11 +42,11 @@
         }
     }
 
-    #nominations {
+    #results, #nominations {
         height: 80vh;
-        border: '2px solid black';
-        width: 'fit-content';
-        padding: '50px'
+        h2 {
+            margin-left: 10%;
+        }
     }
 
     #results-list, #nominations-list{
@@ -60,7 +60,7 @@
         grid-gap: 20px;
         border: none;
         overflow-y: hidden;
-        overflow: scroll;           
+        overflow: scroll;
     }
 
     .movie-card {
@@ -73,6 +73,7 @@
         padding: 0 25px;
 
         background-color: rgb(240, 240, 240);
+        transition: 250ms;
 
         img {
             height: 66%;
@@ -89,6 +90,11 @@
             margin: 0 0 10px 0;
             text-align: center;
         }
+    }
+
+    .movie-card:hover {
+        box-shadow: 2.5px 2px 5px 2.5px;
+        transition: 500ms;
     }
 
 

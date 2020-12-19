@@ -7,8 +7,6 @@ import Nominations from './Nominations'
 
 function App() {
 
-  localStorage.setItem('nominations', [])
-
   const [searchInput, setSearchInput] = useState("")
   const [nominations, setNominations] = useState([])
 

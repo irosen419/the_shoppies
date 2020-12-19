@@ -10,7 +10,7 @@ function Nominations({ addOrRemove, nominations }) {
     }, [nominations])
 
     const mapNominations = () => {
-        return nominations.map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="nominations" />)
+        return [...nominations].map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="nominations" />)
     }
 
     return (
