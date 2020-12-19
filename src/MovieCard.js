@@ -1,3 +1,5 @@
+import defaultImage from './images/default-movie-poster.jpg'
+
 function MovieCard({ movie, addOrRemove, list }) {
 
     // Once the nominate button is clicked, find the button on the DOM and disable it
@@ -15,7 +17,8 @@ function MovieCard({ movie, addOrRemove, list }) {
         // Display a movie's title, year, poster (if one exists) and it's IMDB link
         <div className='movie-card'>
             <h4>{movie.Title} ({movie.Year})</h4>
-            <img src={movie.Poster} alt={movie.Title} />
+            {console.log(movie.Poster)}
+            <img src={movie.Poster[0] === 'h' ? movie.Poster : defaultImage} alt={movie.Title} />
             <br></br>
             <div className='bottom'>
                 <p>View this movie on IMDB <a href={`https://www.imdb.com/title/${movie.imdbID}/`} target="_blank" rel="noreferrer">here</a>!</p>
