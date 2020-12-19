@@ -18,7 +18,7 @@ function MovieCard({ movie, addOrRemove, list }) {
             <img src={movie.Poster} alt={movie.Title} />
             <br></br>
             <div className='bottom'>
-                <p>View this movie on IMDB <a href={`https://www.imdb.com/title/${movie.imdbID}/`} target="_blank" >here</a>!</p>
+                <p>View this movie on IMDB <a href={`https://www.imdb.com/title/${movie.imdbID}/`} target="_blank" rel="noreferrer">here</a>!</p>
                 <button
                     id={movie.imdbID}
                     className={list}
