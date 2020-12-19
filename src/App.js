@@ -27,7 +27,6 @@ function App() {
     } else if (listType === 'nominations') {
       let newNominations = [...nominations]
       newNominations = newNominations.filter(movie => movie.Title !== nomination.Title)
-      console.log("Noms: ", newNominations)
       setNominations(newNominations)
       cookies.set('nominations', newNominations, { path: '/' })
     }

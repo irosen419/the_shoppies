@@ -15,15 +15,10 @@ function MovieCard({ movie, addOrRemove, list, cookieNoms }) {
     const disableButton = () => {
         let buttons = document.querySelectorAll('.results')
         let newButton = [...buttons].find(button => button.id === movie.imdbID)
-        newButton.disabled = false
-        console.log(newButton)
+        if (newButton) {
+            newButton.disabled = false
+        }
     }
-
-    // const enableButton = () => {
-    //     console.log('enabling')
-    //     setButtonAbility(false)
-
-    // }
 
     const disableOnLoad = (movie) => {
         let IDs = []
