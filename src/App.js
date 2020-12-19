@@ -1,17 +1,16 @@
 import './App.scss'
 import './CSS/container.scss';
 import React, { useState } from 'react'
-import Cookies from 'universal-cookie';
 import Search from './Search'
 import Results from './Results'
 import Nominations from './Nominations'
 
 function App() {
 
-  var cookies = new Cookies();
+  localStorage.setItem('nominations', [])
 
   const [searchInput, setSearchInput] = useState("")
-  const [nominations, setNominations] = useState(cookies.get('nominations'))
+  const [nominations, setNominations] = useState([])
 
   const getTitle = (search) => {
     setSearchInput(search)
@@ -22,13 +21,11 @@ function App() {
       let newNominations = [...nominations]
       newNominations.push(nomination)
       setNominations(newNominations)
-      cookies.set('nominations', newNominations, { path: '/' });
 
     } else if (listType === 'nominations') {
       let newNominations = [...nominations]
       newNominations = newNominations.filter(movie => movie.Title !== nomination.Title)
       setNominations(newNominations)
-      cookies.set('nominations', newNominations, { path: '/' })
     }
   }
 
@@ -36,7 +33,7 @@ function App() {
     <div className='App'>
       <Search getTitle={getTitle} />
       <div id='container'>
-        <Results searchInput={searchInput} addOrRemove={addOrRemove} cookies={cookies} />
+        <Results searchInput={searchInput} addOrRemove={addOrRemove} />
         <Nominations nominations={nominations} addOrRemove={addOrRemove} />
       </div>
     </div>
