@@ -1,7 +1,7 @@
 #container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
 
     div {
         background-color: rgb(206, 206, 206);
@@ -62,6 +62,7 @@
         border: none;
 
         overflow-y: hidden;
+        overflow-x: visible;
         overflow: scroll;
         /* Hide scrollbar for IE, Edge and Firefox */
         -ms-overflow-style: none;  /* IE and Edge */
@@ -73,15 +74,10 @@
         display: none;
       }
       
-      
-      .example {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-      }
-
     .movie-card {
         position: relative;
         padding: 0 25px;
+        max-width: 250px;
 
         display: flex;
         flex-direction: column;
