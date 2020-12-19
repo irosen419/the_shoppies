@@ -1,38 +1,13 @@
-import React, { useState, useEffect } from 'react';
+function MovieCard({ movie, addOrRemove, list }) {
 
-function MovieCard({ movie, addOrRemove, list, cookieNoms }) {
+    let buttons = document.querySelectorAll('.results')
+    var button = [...buttons].find(btn => btn.id === movie.imdbID)
 
-    const [nominations, setNominations] = useState([])
-
-    const [buttonAbility, setButtonAbility] = useState(false)
-
-    let button = document.getElementById(movie.imdbID)
-
-    useEffect(() => {
-        setNominations(cookieNoms)
-    }, [cookieNoms])
-
-    const disableButton = () => {
-        let buttons = document.querySelectorAll('.results')
-        let newButton = [...buttons].find(button => button.id === movie.imdbID)
-        if (newButton) {
-            newButton.disabled = false
-        }
-    }
-
-    const disableOnLoad = (movie) => {
-        let IDs = []
-
-        if (nominations && nominations.length && button && button.className === 'results') {
-            for (let i = 0; i < nominations.length; i++) {
-                IDs.push(nominations[i].imdbID)
-            }
-
-            if (IDs.includes(movie.imdbID) && !buttonAbility) {
-                setButtonAbility(true)
-            } else if (!IDs.includes(movie.imdbID) && buttonAbility) {
-                setButtonAbility(false)
-            }
+    const disableOrEnable = () => {
+        if (list === 'results') {
+            button.disabled = true
+        } else if (list === 'nominations') {
+            button.disabled = false
         }
     }
 
@@ -45,13 +20,11 @@ function MovieCard({ movie, addOrRemove, list, cookieNoms }) {
                 <p>View this movie on IMDB <a href={`https://www.imdb.com/title/${movie.imdbID}/`} target="_blank" >here</a>!</p>
                 <button id={movie.imdbID} className={list} onClick={() => {
                     addOrRemove(movie, list)
-                    buttonAbility ? setButtonAbility(false) : disableButton()
+                    disableOrEnable()
                 }}
-                    disabled={buttonAbility}
                 >
                     {list === 'results' ? 'Nominate' : 'Remove Nomination'}
                 </button>
-                {disableOnLoad(movie)}
             </div>
         </div>
     )
