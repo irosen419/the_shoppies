@@ -11,7 +11,7 @@ Once you have an api key, create an env file in the root directory with
 
 ### `touch .env`
 
-Inside the file type 'REACT_APP_API_KEY = {api key goes here}
+Inside the file type 'REACT_APP_API_KEY = {api key goes here}'
 Note: You must deliminate each word in the variable name with an underscore ('_')
 
 In the project directory, run: 
