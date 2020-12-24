@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/the_shoppies/static/css/main.fa687a4d.chunk.css",
-    "main.js": "/the_shoppies/static/js/main.94d5cafe.chunk.js",
-    "main.js.map": "/the_shoppies/static/js/main.94d5cafe.chunk.js.map",
-    "runtime-main.js": "/the_shoppies/static/js/runtime-main.9de772af.js",
-    "runtime-main.js.map": "/the_shoppies/static/js/runtime-main.9de772af.js.map",
-    "static/js/2.329854dc.chunk.js": "/the_shoppies/static/js/2.329854dc.chunk.js",
-    "static/js/2.329854dc.chunk.js.map": "/the_shoppies/static/js/2.329854dc.chunk.js.map",
-    "static/js/3.9332b16a.chunk.js": "/the_shoppies/static/js/3.9332b16a.chunk.js",
-    "static/js/3.9332b16a.chunk.js.map": "/the_shoppies/static/js/3.9332b16a.chunk.js.map",
+    "main.css": "/the_shoppies/static/css/main.66955321.chunk.css",
+    "main.js": "/the_shoppies/static/js/main.f0730084.chunk.js",
+    "main.js.map": "/the_shoppies/static/js/main.f0730084.chunk.js.map",
+    "runtime-main.js": "/the_shoppies/static/js/runtime-main.8f55200b.js",
+    "runtime-main.js.map": "/the_shoppies/static/js/runtime-main.8f55200b.js.map",
+    "static/js/2.3b9a1bfe.chunk.js": "/the_shoppies/static/js/2.3b9a1bfe.chunk.js",
+    "static/js/2.3b9a1bfe.chunk.js.map": "/the_shoppies/static/js/2.3b9a1bfe.chunk.js.map",
+    "static/js/3.f33c7237.chunk.js": "/the_shoppies/static/js/3.f33c7237.chunk.js",
+    "static/js/3.f33c7237.chunk.js.map": "/the_shoppies/static/js/3.f33c7237.chunk.js.map",
     "index.html": "/the_shoppies/index.html",
-    "static/css/main.fa687a4d.chunk.css.map": "/the_shoppies/static/css/main.fa687a4d.chunk.css.map",
-    "static/js/2.329854dc.chunk.js.LICENSE.txt": "/the_shoppies/static/js/2.329854dc.chunk.js.LICENSE.txt",
+    "static/css/main.66955321.chunk.css.map": "/the_shoppies/static/css/main.66955321.chunk.css.map",
+    "static/js/2.3b9a1bfe.chunk.js.LICENSE.txt": "/the_shoppies/static/js/2.3b9a1bfe.chunk.js.LICENSE.txt",
     "static/media/default-movie-poster.cf92e45e.jpg": "/the_shoppies/static/media/default-movie-poster.cf92e45e.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9de772af.js",
-    "static/js/2.329854dc.chunk.js",
-    "static/css/main.fa687a4d.chunk.css",
-    "static/js/main.94d5cafe.chunk.js"
+    "static/js/runtime-main.8f55200b.js",
+    "static/js/2.3b9a1bfe.chunk.js",
+    "static/css/main.66955321.chunk.css",
+    "static/js/main.f0730084.chunk.js"
   ]
 }
