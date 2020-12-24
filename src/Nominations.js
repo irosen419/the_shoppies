@@ -12,7 +12,7 @@ function Nominations({ addOrRemove, nominations }) {
 
     // Maps 'nominations'. Each movie to it's own movie card.
     const mapNominations = () => {
-        return [...nominations].map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="nominations" />)
+        return [...nominations].map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="nominations" nominations={nominations} />)
     }
 
     return (
