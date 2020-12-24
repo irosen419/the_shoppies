@@ -33,7 +33,7 @@ function App() {
       <h1> The Shoppies</h1>
       <Search getTitle={getTitle} />
       <div id='container'>
-        <Results searchInput={searchInput} addOrRemove={addOrRemove} />
+        <Results searchInput={searchInput} addOrRemove={addOrRemove} nominations={nominations} />
         <Nominations nominations={nominations} addOrRemove={addOrRemove} />
       </div>
     </div>

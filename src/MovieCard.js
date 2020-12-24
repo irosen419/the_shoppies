@@ -1,16 +1,20 @@
 import defaultImage from './images/default-movie-poster.jpg'
 
-function MovieCard({ movie, addOrRemove, list }) {
+function MovieCard({ movie, addOrRemove, list, nominations }) {
 
-    // Once the nominate button is clicked, find the button on the DOM and disable it
-    const disableOrEnable = () => {
-        let buttons = document.querySelectorAll('.results')
-        let button = [...buttons].find(btn => btn.id === movie.imdbID)
-        if (list === 'results') {
-            button.disabled = true
-        } else if (list === 'nominations') {
-            button.disabled = false
-        }
+    // // Once the nominate button is clicked, find the button on the DOM and disable it
+    // const disableOrEnable = () => {
+    //     let buttons = document.querySelectorAll('.results')
+    //     let button = [...buttons].find(btn => btn.id === movie.imdbID)
+    //     if (list === 'results') {
+    //         button.disabled = true
+    //     } else if (list === 'nominations') {
+    //         button.disabled = false
+    //     }
+    // }
+
+    const inNominations = () => {
+        return nominations.find(movieObj => movieObj.imdbID === movie.imdbID)
     }
 
     return (
@@ -25,9 +29,9 @@ function MovieCard({ movie, addOrRemove, list }) {
                 <button
                     id={movie.imdbID}
                     className={list}
+                    disabled={!!(inNominations() && list === 'results')}
                     onClick={() => {
                         addOrRemove(movie, list)
-                        disableOrEnable()
                     }}
                 >
                     {list === 'results' ? 'Nominate' : 'Remove Nomination'}

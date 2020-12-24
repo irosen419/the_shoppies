@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
 
-function Result({ searchInput, addOrRemove }) {
+function Result({ searchInput, addOrRemove, nominations }) {
     const API_KEY = process.env.REACT_APP_API_KEY
 
     const [results, setResults] = useState([])
@@ -47,7 +47,7 @@ function Result({ searchInput, addOrRemove }) {
 
     // Maps results of fetch. Each movie to it's own movie card.
     const mapResults = () => {
-        return results.map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="results" />)
+        return results.map(movie => <MovieCard key={movie.imdbID} movie={movie} addOrRemove={addOrRemove} list="results" nominations={nominations} />)
     }
 
     // Decides, based on 'page' number, whether or not to render Next and Previous buttons
