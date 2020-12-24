@@ -20,7 +20,7 @@ function Nominations({ addOrRemove, nominations }) {
             <h2>Nominations</h2>
             {/* If there are no nominations, propmt the user to make one */}
             {
-                nominations.length ?
+                [...nominations].length ?
                     <div id='nominations-list'>
                         {mapNominations()}
                     </div> :
