@@ -8,6 +8,7 @@ import Cookies from 'universal-cookie';
 
 function App() {
 
+  // Create a new cookie
   const cookies = new Cookies();
 
 
@@ -19,6 +20,7 @@ function App() {
   }
 
   // Add movie to or remove movie from the nominations bucket depending on it's origin
+  // Also add new nominations array to cookie for storage
   const addOrRemove = (nomination, listType) => {
     if (listType === 'results') {
       let newNominations = [...nominations]
