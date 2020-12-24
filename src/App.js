@@ -4,11 +4,15 @@ import React, { useState } from 'react'
 import Search from './Search'
 import Results from './Results'
 import Nominations from './Nominations'
+import Cookies from 'universal-cookie';
 
 function App() {
 
+  const cookies = new Cookies();
+
+
   const [searchInput, setSearchInput] = useState("")
-  const [nominations, setNominations] = useState([])
+  const [nominations, setNominations] = useState(cookies.get('nominations'))
 
   const getTitle = (search) => {
     setSearchInput(search)
@@ -20,11 +24,12 @@ function App() {
       let newNominations = [...nominations]
       newNominations.push(nomination)
       setNominations(newNominations)
-
+      cookies.set('nominations', newNominations, { path: '/' });
     } else if (listType === 'nominations') {
       let newNominations = [...nominations]
       newNominations = newNominations.filter(movie => movie.Title !== nomination.Title)
       setNominations(newNominations)
+      cookies.set('nominations', newNominations, { path: '/' });
     }
   }
 
