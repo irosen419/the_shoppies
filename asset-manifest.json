@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/the_shoppies/static/css/main.66955321.chunk.css",
-    "main.js": "/the_shoppies/static/js/main.f0730084.chunk.js",
-    "main.js.map": "/the_shoppies/static/js/main.f0730084.chunk.js.map",
+    "main.js": "/the_shoppies/static/js/main.9e90116e.chunk.js",
+    "main.js.map": "/the_shoppies/static/js/main.9e90116e.chunk.js.map",
     "runtime-main.js": "/the_shoppies/static/js/runtime-main.8f55200b.js",
     "runtime-main.js.map": "/the_shoppies/static/js/runtime-main.8f55200b.js.map",
-    "static/js/2.3b9a1bfe.chunk.js": "/the_shoppies/static/js/2.3b9a1bfe.chunk.js",
-    "static/js/2.3b9a1bfe.chunk.js.map": "/the_shoppies/static/js/2.3b9a1bfe.chunk.js.map",
+    "static/js/2.b25ca9df.chunk.js": "/the_shoppies/static/js/2.b25ca9df.chunk.js",
+    "static/js/2.b25ca9df.chunk.js.map": "/the_shoppies/static/js/2.b25ca9df.chunk.js.map",
     "static/js/3.f33c7237.chunk.js": "/the_shoppies/static/js/3.f33c7237.chunk.js",
     "static/js/3.f33c7237.chunk.js.map": "/the_shoppies/static/js/3.f33c7237.chunk.js.map",
     "index.html": "/the_shoppies/index.html",
     "static/css/main.66955321.chunk.css.map": "/the_shoppies/static/css/main.66955321.chunk.css.map",
-    "static/js/2.3b9a1bfe.chunk.js.LICENSE.txt": "/the_shoppies/static/js/2.3b9a1bfe.chunk.js.LICENSE.txt",
+    "static/js/2.b25ca9df.chunk.js.LICENSE.txt": "/the_shoppies/static/js/2.b25ca9df.chunk.js.LICENSE.txt",
     "static/media/default-movie-poster.cf92e45e.jpg": "/the_shoppies/static/media/default-movie-poster.cf92e45e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.8f55200b.js",
-    "static/js/2.3b9a1bfe.chunk.js",
+    "static/js/2.b25ca9df.chunk.js",
     "static/css/main.66955321.chunk.css",
-    "static/js/main.f0730084.chunk.js"
+    "static/js/main.9e90116e.chunk.js"
   ]
 }
