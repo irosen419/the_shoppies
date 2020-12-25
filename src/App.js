@@ -1,6 +1,6 @@
 import './App.scss'
 import './CSS/container.scss';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Search from './Search'
 import Results from './Results'
 import Nominations from './Nominations'
@@ -13,7 +13,14 @@ function App() {
 
 
   const [searchInput, setSearchInput] = useState("")
-  const [nominations, setNominations] = useState(cookies.get('nominations'))
+  const [nominations, setNominations] = useState([])
+
+  // On app load, nominations state is set either with an array stored in cookies or an empty array
+  useEffect(() => {
+    let cookieArray = cookies.get('nominations') || []
+    cookies.set('nominations', cookieArray, { path: '/' });
+    setNominations(cookies.get('nominations'))
+  }, [])
 
   const getTitle = (search) => {
     setSearchInput(search)
